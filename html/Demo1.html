@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+</head>
+<body>
+    <h1>Registration</h1>
+    <label for="name">Name</label>
+    <input type="text" id="name">
+    
+    <label for="city">City</label>
+    <input type="text" id="city">
+
+    <input type="button" value="Display" onclick="Display()">
+
+    <p id="user"></p>
+    
+</body>
+<script>
+    function Display(){
+
+        var name=document.getElementById("name").value
+        var city=document.getElementById("city").value
+
+        document.getElementById("user").innerHTML="Name: "+ name +"city :"+city
+
+
+    }
+
+
+</script>
+</html>

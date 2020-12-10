@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>JS Form Validation</title>
+    </head>
+
+    <body>
+        <form name="regForm" onsubmit="return validateForm()">
+            <label>FirstName: </label>
+            <!-- <input type="text" id="fnameid" name="fname" oninput="validateFirstName()" required> -->
+            <input type="text" id="fnameid" name="fname" required>
+
+            <p id="pid"></p>
+            
+            <label>LastName: </label>
+            <input type="text" id="lnameid" name="lname" required>
+            <p id="p1id"></p>
+
+            <label>City: </label>
+            <input type="text" id="cityid" name="city" required>
+            <p id="p2id"></p>
+
+
+            <label id="Gender">Sex [select Male or Female]: </label>
+
+            <input type="radio" name="sex" value="Male" checked /><span>Male</span>
+            <input type="radio" name="sex" value="Female"><span>Female</span>
+
+
+            <br><br><br><br>
+
+
+
+
+
+
+
+            <input type="submit" value="Submit">
+        </form> 
+
+        <script>
+            function validateForm(){
+                var firstName=document.forms["regForm"]["fname"].value
+                validateFirstName(firstName)      //function call kela
+                var lastName=document.forms["regForm"]["lname"].value
+                validateLastName(lastName)
+                var city=document.forms["regForm"]["city"].value
+                validateCity(city)
+                return false
+            }
+
+            function validateFirstName(firstName){
+                // var firstName=document.forms["regForm"]["fname"].value
+                var regex=/^[A-Za-z]+$/
+                if(regex.test(firstName)===true){
+                    document.getElementById("pid").innerHTML="Name is valid..."
+                    document.getElementById("pid").style.color="green"
+                    // document.write("Valid Name")
+                   // alert("Valid name")
+                    return false
+                }else{
+                    alert("Invalid FirstName")
+                    return false
+                }
+            }
+
+            function validateLastName(lastName){
+                // var firstName=document.forms["regForm"]["fname"].value
+                var regex=/^[A-Za-z]+$/
+                if(regex.test(lastName)===true){
+                    document.getElementById("p1id").innerHTML="Name is valid..."
+                    document.getElementById("p1id").style.color="green"
+                    // document.write("Valid Name")
+                   // alert("Valid name")
+                    return false
+                }else{
+                    document.getElementById("p1id").innerHTML="LastName is Invalid.."
+                    return false
+                }
+            }
+
+            function validateCity(city){
+                // var firstName=document.forms["regForm"]["fname"].value
+                var regex=/^[A-Za-z]+$/
+                if(regex.test(city)===true){
+                    document.getElementById("p2id").innerHTML="Name is valid..."
+                    document.getElementById("p2id").style.color="green"
+                    // document.write("Valid Name")
+                   // alert("Valid name")
+                    return false
+                }else{
+                    document.getElementById("p2id").innerHTML="city is Invalid.."
+                    return false
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>
+

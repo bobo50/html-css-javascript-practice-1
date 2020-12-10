@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From validation</title>
+</head>
+
+<style>
+    #sona{
+        color: red;
+        padding: 50px;
+    }
+    #reena{
+        color: red;
+        padding: 50px;
+    }
+</style>
+
+<body>
+                
+   
+    <label for="fname">First Name : </label>
+    <input type="text" name="fname" id="fn" placeholder="First Name" value=""><br>
+    <span id="sona"></span><br>
+    
+    <label for="lname">Last Name :</label>
+    <input type="text" name="lname" id="ld" placeholder="Last Name" value=""><br>
+    <span id="reena"></span><br>
+
+
+    <label for="lname">Numbere :</label>
+    <input type="text" name="Nname" id="Nd" placeholder="Last Name" value=""><br>
+    <span id="meera"></span><br>
+
+
+
+
+
+
+
+
+    <input type="button" value="submit" name="submit" onclick="validation()"><br>
+</form>
+<script>
+    function validation() {
+     var user= document.getElementById("fn").value;  
+     var b= document.getElementById("ld").value; 
+     var regex = /^[A-Za-z]+$/;
+     var regex1=/^[0-9]+$/;
+  if( user == "" ) {
+      document.getElementById("sona").innerHTML="*Please Enter your first name*"
+      document.getElementById("reena").innerHTML="*Please Enter your last name*"
+      if(regex.test(user)==true)
+       {
+           return true;
+            }
+              else
+            {
+              
+              return false;
+               } 
+        }
+
+     
+        if(regex1.test(user)==true){
+            document.getElementById("sona").innerHTML="*Please enter only alphabets*"
+        }
+        if(regex1.test(b)==true){
+            document.getElementById("reena").innerHTML="*Please enter only alphabets*"
+        }
+}
+ 
+
+
+
+
+                    </script>
+                    </body>
+                    </head>
+                    </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <body>
+   
+    
+         <button onclick="showprompDiglog()">prompt</button>
+     
+         <p id="pid"></p>
+     
+     
+     
+     
+         <script>
+     
+     
+            //  function ShowConfirmDialog(){
+     
+            //      var result=confirm("Are you sure u want to confirm?")
+            //      if(result){
+            //          document.write("you confirmed.....")
+            //      }
+            //      else{
+            //          document.write("you cancelled...")
+            //      }
+            //  }
+     
+     
+             function showprompDiglog(){
+     
+                 var name=prompt("Enter valid name")
+     
+                 if (!isNaN(name) || name==''){
+                     document.write("invalid ...")
+                 }
+                 else{
+                     document.getElementById("pid").innerHTML="you entered: "+name
+                 }
+     
+             }
+
+
+
+
+
+    
+
+
+
+    </script>
+</body>
+</html>

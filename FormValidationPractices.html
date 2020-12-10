@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>JS Form Validation</title>
+    </head>
+
+    <body>
+        <form name="regForm"  onsubmit="return validateForm()">
+            <label>FirstName: </label>
+            <!-- <input type="text" id="fnameid" name="fname" oninput="validateFirstName()" required> -->
+            <input type="text" id="fnameid" name="fname" required><br>
+
+            <p id="pid"></p>
+            
+            <label>LastName: </label>
+            <input type="text" id="lnameid" name="lname" required><br><br>
+            <p id="lid"></p>
+
+            <label>City: </label>
+            <input type="text" id="cityid" name="city" required><br>
+            <p id="cid"></p>
+
+
+            <input type="submit" value="Submit">
+        </form> 
+
+        <script>
+             
+            function validateForm(){
+                console.log("valid")
+                var firstName=document.forms["regForm"]["fname"].value
+               
+                validateFirstName(firstName)
+                
+                var lastName=document.forms["regForm"]["lname"].value
+                validateLastName(lastName)
+                var city=document.forms["regForm"]["city"].value
+                validateCity(city)
+                return false
+            }
+
+            function validateFirstName(firstName){
+                // var firstName=document.forms["regForm"]["fname"].value
+                var regex=/^[A-Za-z]+$/
+                if(regex.test(firstName)===true){
+                    console.log("Valid")
+                    document.getElementById("pid").innerHTML="Name is valid..."
+                    document.getElementById("pid").style.color="green"
+                    // document.write("Valid Name")
+                   // alert("Valid name")
+                   return false
+                }else{
+                    alert("Invalid name")
+                    return false
+                }
+            }
+
+            function validateLastName(lastName)
+            {
+                
+                if(regex.test(lastName)===true){
+                    document.getElementById("lid").innerHTML="Name is valid..."
+                    document.getElementById("lid").style.color="green"
+                }else{
+                    return false
+                }
+            }
+
+            function validateCity(city)
+            {
+               
+                if(regex.test(city)===true){
+                    document.getElementById("cid").innerHTML="Name is valid..."
+                    document.getElementById("cid").style.color="green"
+                }else{
+                    return false
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
+

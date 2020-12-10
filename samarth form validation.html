@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title> Form Submition </title>
+        <body>
+            <style>
+                #sam{
+                    color: red;
+                    padding: 50px;
+                }
+                #om{
+                    color: red;
+                    padding: 50px;
+                }
+            </style>
+            <form >
+                
+                <label for="fname">First Name :- </label>
+                <input type="text" name="fname" id="st" placeholder="First Name"><br>
+                <span id="sam"></span><br>
+                
+                <label for="lname">Last Name :-</label>
+                <input type="text" name="lname" id="nd" placeholder="Last Name" value=""><br>
+                <span id="om"></span><br>
+
+              <!-- <label for="mail">Email</label>
+                <input type="email" name="email" id="rd" placehold  er="Email" value=""><br>
+                <span id="sami"></span> -->
+                
+                <span id="sp"></span>
+                
+                <input type="button" value="submit" name="submit" onclick="validation()"><br>
+                </form>
+                
+                <script>
+                    function validation() {
+                     var user= document.getElementById("st").value;  
+                     var b= document.getElementById("nd").value; 
+                     var regex = /^[A-Za-z]+$/;
+                     var regex1=/^[0-9]+$/;
+                  if( user == "" ) {
+                      document.getElementById("sam").innerHTML="*Please Enter your first name*"
+                      document.getElementById("om").innerHTML="*Please Enter your last name*"
+                  }
+                  
+                    //   if(regex.test(user)==true)
+                    //    {
+                    //        return true;
+                    //         }
+                    //           else
+                    //         {
+                              
+                    //           return false;
+                    //            } 
+                    //     }
+
+                     
+                        if(regex1.test(user)==true){
+                            document.getElementById("sam").innerHTML="*Please enter only alphabets*"
+                        }
+                        if(regex1.test(b)==true){
+                            document.getElementById("om").innerHTML="*Please enter only alphabets*"
+                        }
+                }
+                //       window.alert("Please enter your name."); 
+                //     name.focus(); 
+                //     return false; 
+                //   }
+                //  alert( "Please provide your name!");
+//                 {
+//    var letters = /^[A-Za-z]+$/;
+//    if(regex.test(firstname)==true)
+//      {
+//       return true;
+//      }
+//    else
+//      {
+//      alert("message");
+//      return false;
+//     }
+ //  }
+                    
+                    </script>
+                    </body>
+                    </head>
+                    </html>
